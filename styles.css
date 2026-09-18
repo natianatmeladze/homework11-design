@@ -1,157 +1,287 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+:root {
+  --primary: hsl(322, 100%, 66%);
+  --very-pale-cyan: hsl(193, 100%, 98%);
+  --very-dark-cyan: hsl(192, 100%, 9%);
+  --grayish-blue: hsl(208, 11%, 55%);
+  --ff-heading: 'Poppins', sans-serif;
+  --ff-body: 'Open Sans', sans-serif;
 }
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-a {
+
+body {
+  font-family: var(--ff-body);
+  font-size: 16px;
+  color: var(--very-dark-cyan);
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3 {
+  font-family: var(--ff-heading);
+}
+
+.btn {
+  display: inline-block;
   text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
 }
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 16px 60px;
+  box-shadow: 0 6px 15px rgba(255, 82, 193, 0.3);
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: var(--very-dark-cyan);
+  padding: 10px 32px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+}
+
+.btn-secondary:hover {
+  color: var(--grayish-blue);
+}
+
 .container {
-  max-width: 1300px;
-  margin: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
-.first-section {
-  background-color: #EDFBFF;
+
+header {
+  background-color: var(--very-pale-cyan);
+  padding: 40px 0 60px 0;
+  background-image: url('https://raw.githubusercontent.com/fm-challenges/huddle-landing-page-with-alternating-feature-blocks/main/images/bg-hero-desktop.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.hero {
+
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 30px;
+  margin-bottom: 60px;
 }
-.btn-1 {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  background-color: white;
-  border-radius: 24px;
-  box-shadow: 0px 3px 11px 0px #00000018;
-  outline: none;
-  border: none;
-  padding: 15px 65px;
-  color: #00252e;
+
+.logo {
+  width: 160px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 2.4rem;
+  line-height: 1.3;
+  margin-bottom: 24px;
+}
+
+.hero-text p {
+  margin-bottom: 32px;
+  color: var(--very-dark-cyan);
+}
+
+.hero-img {
+  flex: 1;
+}
+
+.features {
+  padding: 120px 0;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 60px 80px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+.card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.card-text {
+  flex: 1;
+}
+
+.card-text h2 {
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+}
+
+.card-text p {
+  color: var(--grayish-blue);
+}
+
+.card-img {
+  flex: 1;
+}
+
+.cta-wrapper {
+  position: relative;
+  margin-bottom: -90px;
+  z-index: 10;
+}
+
+.cta-card {
+  background: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+.cta-card h2 {
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+footer {
+  background-color: var(--very-dark-cyan);
+  color: #fff;
+  padding: 160px 0 60px 0;
+}
+
+.footer-logo {
+  filter: brightness(0) invert(1);
+  width: 180px;
+  margin-bottom: 30px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+  color: var(--very-pale-cyan);
+}
+
+.info-item i {
+  margin-top: 5px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 16px;
+}
+
+.footer-links a {
+  color: var(--very-pale-cyan);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.copyright {
+  text-align: right;
+  font-size: 0.75rem;
+  margin-top: 60px;
+  color: var(--very-pale-cyan);
+}
+
+@media (max-width: 850px) {
+  header {
+    background-image: url('https://raw.githubusercontent.com/fm-challenges/huddle-landing-page-with-alternating-feature-blocks/main/images/bg-hero-mobile.svg');
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card, .card:nth-child(even) {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 40px 30px;
+    gap: 40px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .copyright {
+    text-align: center;
+  }
 }
